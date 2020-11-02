@@ -1,0 +1,42 @@
+.userInformation {
+    display: grid;
+  grid-template-columns: 2fr 10fr;
+  
+  grid-template-areas:
+  "uimg uinf";
+}
+
+
+.userImage {
+  padding: 10px;
+}
+.userImage img {
+  grid-area: uimg;
+ justify-items: top;
+  
+  border-radius: 15%;
+  border: solid red;
+
+}
+.userInfo{
+    grid-area: uinf;
+    
+    padding: 10px;
+    ;
+}
+.profileBackground img{
+    width: 100%;
+    height: 300px;
+    border: solid gold;
+}
+ul {
+ 
+}
+.contactUl {
+  text-align: center;
+  list-style-type: none;
+float: right;
+}
+.contact {
+ 
+}

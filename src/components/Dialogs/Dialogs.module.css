@@ -1,0 +1,52 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+.dialog {
+  height: 50px;
+  border-color: rgb(255, 255, 255);
+  border: solid;
+  margin: 5px auto;
+}
+
+.dialog img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+
+}
+
+.messages {
+  padding: 10px;
+  background-color:rgb(162, 202, 255);
+
+}
+.message {
+  
+}
+.dialogsItems {
+  padding: 10px;
+  color: white;
+  background-color: rgb(239, 246, 255);
+  text-decoration: none;
+}
+
+.dialogsItems .active {
+  color: gold;
+
+  border: solid red;
+  margin: 5px auto;
+ 
+}
+
+.dialogsItems .active img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+textarea {
+  border: solid 2px;
+  height: auto;
+  overflow: auto;
+ 
+}

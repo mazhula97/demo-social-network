@@ -1,0 +1,15 @@
+.header {
+    grid-area: h;
+    background-color: rgba(51,76,138,.85);
+  }
+  .header img {
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+  }
+  .loginBlock {
+  color: aliceblue;
+  }
+    .loginBlock {
+    float: right;
+  }
