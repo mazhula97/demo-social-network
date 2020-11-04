@@ -1,18 +1,25 @@
 import { stopSubmit } from "redux-form";
-import { authAPI } from "../api/api";
+import { authAPI, securityAPI } from "../api/api";
 
 const SET_USERS_DATA = "auth/SET-USERS-DATA";
+const GET_CAPTCHA_URL_SUCCESS = "GET-CAPTCHA-URL-SUCCESS";
 
 let initialState = {
   userId: null,
   email: null,
   login: null,
   isAuth: false,
+  captchaUrl: null
 };
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USERS_DATA:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case GET_CAPTCHA_URL_SUCCESS:
       return {
         ...state,
         ...action.payload,
@@ -27,6 +34,10 @@ export const setAuthUserData = (userId, email, login, isAuth) => ({
   type: SET_USERS_DATA,
   payload: { userId, email, login, isAuth },
 });
+export const getCaptchaUrlSuccess= (captchaUrl) => ({
+  type: GET_CAPTCHA_URL_SUCCESS,
+  payload: {captchaUrl},
+});
 
 export const getAuthMeThunkCreator = () => async (dispatch) => {
   let response = await authAPI.me();
@@ -36,11 +47,14 @@ export const getAuthMeThunkCreator = () => async (dispatch) => {
   }
 };
 
-export const loginThunkCreator = (email, password, rememberMe) => async (dispatch) => {
-  let response = await authAPI.login(email, password, rememberMe)
+export const loginThunkCreator = (email, password, rememberMe, captcha) => async (dispatch) => {
+  let response = await authAPI.login(email, password, rememberMe, captcha)
     if (response.data.resultCode === 0) {
       dispatch(getAuthMeThunkCreator());
     } else {
+      if (response.data.resultCode === 10) {
+        dispatch(getCaptchaUrlThunkCreator())
+      }
       let message =
         response.data.messages.length > 0
           ? response.data.messages[0]
@@ -57,6 +71,10 @@ export const logoutThunkCreator = () => async (dispatch) => {
       }
     };
   
-
+    export const getCaptchaUrlThunkCreator = () => async (dispatch) => {
+      let response = await securityAPI.getCaptchaUrl();
+       const captchaUrl = response.data.url;
+      dispatch(getCaptchaUrlSuccess(captchaUrl))
+      };
 
 export default authReducer;

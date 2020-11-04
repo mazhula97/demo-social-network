@@ -12,7 +12,7 @@ import { compose } from "redux";
 import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const Friends = React.lazy(() => import('./components/Friends/Friends'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
@@ -69,11 +69,11 @@ let AppContainer = compose(
 
 let MainApp = (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

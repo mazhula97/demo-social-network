@@ -13,9 +13,8 @@ const MyPosts = React.memo((props) => {
   //   return nextProps.nextProps != this.props || nextState != this.state;
   // }
 
-  console.log("RENDER YO");
   let postsElement = props.posts.map((p) => (
-    <Post key={p} message={p.message} likeCount={p.likeCount} />
+    <Post key={p.id} message={p.message} likeCount={p.likeCount} />
   ));
   let addNewPost = (values) => {
     props.addPost(values.newPostText);

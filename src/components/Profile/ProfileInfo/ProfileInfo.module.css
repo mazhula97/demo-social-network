@@ -1,42 +1,41 @@
 .userInformation {
-    display: grid;
+  display: grid;
   grid-template-columns: 2fr 10fr;
-  
-  grid-template-areas:
-  "uimg uinf";
+
+  grid-template-areas: "uimg uinf";
 }
 
-
-.userImage {
+.mainPhoto {
+  grid-area: uimg;
+  border: 2px solid rgb(28, 23, 70);
   padding: 10px;
 }
-.userImage img {
-  grid-area: uimg;
- justify-items: top;
-  
-  border-radius: 15%;
-  border: solid red;
+.mainPhoto img {
+  width: 200px;
+  height: 200px;
 
+  margin: 20px;
+
+  border-radius: 50%;
+  border: solid red;
 }
-.userInfo{
-    grid-area: uinf;
-    
-    padding: 10px;
-    ;
+.userInfo {
+  grid-area: uinf;
+  border: solid 1px green;
+  padding: 10px;
 }
-.profileBackground img{
-    width: 100%;
-    height: 300px;
-    border: solid gold;
+.profileBackground img {
+  width: 100%;
+  height: 300px;
+  border: solid gold;
 }
-ul {
- 
-}
+
 .contactUl {
   text-align: center;
   list-style-type: none;
-float: right;
+  float: right;
 }
-.contact {
- 
+
+.editButton {
+  float: right;
 }

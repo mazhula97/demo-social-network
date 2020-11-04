@@ -1,9 +1,11 @@
+import { stopSubmit } from "redux-form";
 import { ProfileAPI, usersAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_STATUS = "SET-STATUS";
 const DELETE_POST = "DELETE-POST";
+const SAVE_PHOTO_SUCCESS = "SAVE-PHOTO-SUCCESS";
 
 let initialState = {
   posts: [
@@ -41,7 +43,12 @@ export const profileReducer = (state = initialState, action) => {
         }
 case DELETE_POST:
 return {
-...state, posts: state.posts.filter(p => p.id != action.postId)
+...state, posts: state.posts.filter(p => p.id !== action.postId)
+}
+case SAVE_PHOTO_SUCCESS:
+return {
+...state, 
+profile: {...state.profile, photos: action.photos} 
 }
     default:
       return state;
@@ -71,6 +78,18 @@ export const deletePost = (postId) => {
     postId,
   };
 };
+export const savePhotoSuccess = (photos) => {
+  return {
+    type: SAVE_PHOTO_SUCCESS,
+    photos,
+  };
+};
+export const saveProfileSuccess = (photos) => {
+  return {
+    type: SAVE_PHOTO_SUCCESS,
+    photos,
+  };
+};
 
 
 export const getUserProfileThunkCreator = (userId) => async (dispatch) => {
@@ -93,6 +112,29 @@ export const updateStatusThunkCreator = (status) => async (dispatch) => {
       dispatch(setStatus(status));
      }
       
+    };
+export const savePhotoThunkCreator = (file) => async (dispatch) => {
+    let response = await ProfileAPI.savePhoto(file)
+     if (response.data.resultCode === 0){
+      dispatch(savePhotoSuccess(response.data.data.photos));
+     }
+    };
+export const saveProfileThunkCreator = (profile) => async (dispatch, getState) => {
+   const userId = getState().auth.userId; 
+  let response = await ProfileAPI.saveProfile(profile)
+    
+    if (response.data.resultCode === 0){
+      dispatch(getUserProfileThunkCreator(userId));
+     } else {
+       
+      // let message =
+      // response.data.messages.length > 0
+      //   ? response.data.messages[0]
+      //   : "Some error";
+    dispatch(stopSubmit("edit-profile", { _error: response.data.messages[0] }));
+    return Promise.reject(response.data.messages[0]);
+  }
+
     };
 
 export default profileReducer;
