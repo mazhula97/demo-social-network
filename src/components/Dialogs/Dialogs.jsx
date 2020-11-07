@@ -17,7 +17,7 @@ const Dialogs = (props) => {
   let messageElements = state.messages.map((m) => (
     <Message key={m.id} message={m.message} />
   ));
-  // let newMessageElement = React.createRef();
+
 
   let addNewMessage = (values) => {
     props.sendMessage(values.newMessageText);
@@ -25,7 +25,11 @@ const Dialogs = (props) => {
 
   return (
     <div className={s.dialogs}>
+    
+    
       <div className={s.dialogsItems}>{dialogsElements}</div>
+     
+     
       <div className={s.messages}>
         <div>{messageElements}</div>
         <AddMessageFormRedux onSubmit={addNewMessage} />

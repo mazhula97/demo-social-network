@@ -1,4 +1,4 @@
-.app-wrapper {
+.appWrapper {
   margin: 0 auto;
   display: grid;
 
@@ -13,11 +13,20 @@
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
-.app-wrapper-content {
+.appWrapperContent {
   grid-area: c;
   background-color: rgb(245, 249, 255);
   border: solid 0.5px rgba(51,76,138,.85) ;
   box-shadow: black ;
   border-radius: 7px;
+  
 
+}
+.preloader {
+    width: 250px;
+    height: 250px;
+    position: relative ;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
 }

@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from "react";
-import "./App.css";
+import s from "./App.module.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import News from "./components/News/News";
@@ -33,16 +33,16 @@ class App extends Component {
   //   window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
   // }
   render() {
-    if (!this.props.initialized) {
-      return <Preloader />;
-    }
+    // if (!this.props.initialized) {
+    //   return <Preloader className={s.} />;
+    // }
 
     return (
-      <div className="app-wrapper">
+      <div className={s.appWrapper}>
         <HeaderComponent />
         <Navbar />
 
-        <div className="app-wrapper-content">
+        <div className={s.appWrapperContent}>
          <Suspense fallback={<Preloader />} >
            <Switch>
            <Route exact

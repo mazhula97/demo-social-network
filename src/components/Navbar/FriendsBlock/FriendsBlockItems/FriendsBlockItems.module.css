@@ -69,3 +69,35 @@ color: rgb(255, 235, 122);
   background-color: rgba(223, 245, 31, 0.1);
 }
 
+.friendsBlockItems {
+  grid-area: fb;
+  background-color: rgba(2, 3, 3, 0.85);
+  border-radius: 7px;
+
+  display: grid;
+  grid-template-areas:
+    " fi fi "
+    " fi fi ";
+
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-gap: 2px;
+  color: aliceblue;
+  padding: 5px 5px 10px 5px;
+}
+.friendItem {
+  /* border: 1px solid white; */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.friendItem img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.friendItemName {
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}

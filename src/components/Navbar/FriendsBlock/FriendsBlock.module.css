@@ -1,0 +1,28 @@
+
+.friendsBlock {
+  grid-area: fb;
+  background-color: rgba(2, 3, 3, 0.85);
+  border-radius: 7px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.friendsLink {
+  font-size: 35px;
+  font-weight: bold;
+  display: block;
+}
+.friendsLink .friendsActiveLink {
+color: rgb(255, 235, 122);
+}
+.friendsLink a {
+  text-decoration: none;
+  color: aliceblue;
+}
+.friendsLink :hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: aliceblue;
+  box-shadow: 0 0 20px rgba(217, 240, 47, 0.3);
+  background-color: rgba(223, 245, 31, 0.1);
+}
+
