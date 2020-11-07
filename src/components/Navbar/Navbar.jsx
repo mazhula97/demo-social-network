@@ -5,8 +5,10 @@ import s from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
+      
     <nav className={s.nav}>
-      <div className={s.item}>
+     <div className={s.itemsBlock}>
+     <div className={s.item}>
         <NavLink to="/profile" activeClassName={s.activeLink}>
           Profile
         </NavLink>
@@ -38,8 +40,10 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <p></p>
-      <div className={s.itemfriends}>
+     </div>
+     
+     
+      <div className={s.friendsBlock}>
         <NavLink to="/friends" activeClassName={s.activeLink}>
           <h3>Friends</h3>
         </NavLink>

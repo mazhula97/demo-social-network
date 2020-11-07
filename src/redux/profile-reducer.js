@@ -110,6 +110,8 @@ export const updateStatusThunkCreator = (status) => async (dispatch) => {
     
      if (response.data.resultCode === 0){
       dispatch(setStatus(status));
+     } else {
+       alert(response.data.messages[0])
      }
       
     };

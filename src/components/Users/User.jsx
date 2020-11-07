@@ -5,7 +5,9 @@ import { NavLink } from "react-router-dom";
 
 
 let User = ({user, followingInProgress, follow, unfollow}) => {
+ 
   return (
+    
       <div className={s.usersItem}>
         <span>
           <div>
@@ -43,10 +45,7 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
             <div>{user.name}</div>
             <div>{user.status}</div>
           </span>
-          <span>
-            <div>"u.location.country"</div>
-            <div> "u.location.city" </div>
-          </span>
+        
         </span>
       </div>
   );

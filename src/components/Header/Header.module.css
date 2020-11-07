@@ -1,15 +1,42 @@
 .header {
-    grid-area: h;
-    background-color: rgba(51,76,138,.85);
-  }
-  .header img {
-    width: 60px;
-    height: 60px;
-    padding: 3px;
-  }
-  .loginBlock {
+  grid-area: h;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: grid;
+
+  grid-template-areas: "i lb";
+
+  grid-template-columns: 60px 1fr;
+  grid-gap: 5px;
+  border-radius: 5px;
+  
+}
+.header img {
+  grid-area: i;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  padding-top: 5px;
+}
+
+.loginBlock {
+  grid-area: lb;
+  float: right;
   color: aliceblue;
-  }
-    .loginBlock {
-    float: right;
-  }
+  margin-right: 20px;
+
+  text-align: end;
+  padding-top: 15px;
+}
+.loginBlockButton {
+  margin-left: 20px;
+  background: transparent;
+  border: none;
+  
+}
+.loginBlockButton :active {
+border: none;
+}
+.loginBlockButton :hover {
+width: 25px;
+height: 25px;
+}
