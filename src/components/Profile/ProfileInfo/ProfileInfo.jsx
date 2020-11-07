@@ -5,18 +5,11 @@ import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
 
-const ProfileInfo = ({
-  profile,
-  isOwner,
-  savePhoto,
-  status,
-  updateStatus,
-  saveProfile,
-}) => {
+const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, saveProfile}) => {
   let [editMode, setEditMode] = useState(false);
 
   if (!profile) {
-    return <Preloader />;
+    return <Preloader className={s.profilePreloader} />;
   }
 
   const onMainPhotoChange = (e) => {

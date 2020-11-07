@@ -6,6 +6,8 @@ import { loginThunkCreator } from "../../redux/auth-reducer ";
 import { required } from "../../utils/validators/validators";
 import { createField, Input } from "../common/FormsControls/FormsControls";
 import s from "../common/FormsControls/FormsControls.module.css";
+import style from './Login.module.css'
+
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -36,7 +38,7 @@ const Login = (props) => {
     return <Redirect to="/profile" />;
   }
   return (
-    <div>
+    <div className={style.loginForm}>
       <h1>LOGIN</h1>
       <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
     </div>

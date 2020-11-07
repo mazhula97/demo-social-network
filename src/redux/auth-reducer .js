@@ -1,3 +1,4 @@
+
 import { stopSubmit } from "redux-form";
 import { authAPI, securityAPI } from "../api/api";
 
@@ -68,6 +69,7 @@ export const logoutThunkCreator = () => async (dispatch) => {
    let response = await authAPI.logout()
       if (response.data.resultCode === 0) {
         dispatch(getAuthMeThunkCreator(null, null, null, false));
+        
       }
     };
   
