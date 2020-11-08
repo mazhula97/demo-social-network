@@ -1,0 +1,8 @@
+.news{
+    background-color: var(--bcc);
+    height: px;
+}
+.comingSoon img{ 
+    height: var(--csh);
+    width: var(--csw);
+}

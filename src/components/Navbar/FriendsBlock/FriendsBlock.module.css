@@ -7,9 +7,10 @@
   padding-bottom: 10px;
 }
 .friendsLink {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   display: block;
+  font-family: Azonix;
 }
 .friendsLink .friendsActiveLink {
 color: rgb(255, 235, 122);
@@ -17,6 +18,7 @@ color: rgb(255, 235, 122);
 .friendsLink a {
   text-decoration: none;
   color: aliceblue;
+ 
 }
 .friendsLink :hover {
   text-decoration: none;

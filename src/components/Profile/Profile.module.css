@@ -1,0 +1,18 @@
+.profile {
+    display: grid;
+    grid-template-areas:
+    " pd " 
+    " cp ";
+
+    grid-template-rows:  auto auto;
+    grid-gap: 10px;
+    border-radius: 7px;
+}
+.pD {
+    grid-area: pd;
+   
+}
+.cP {
+    grid-area: cp;
+    
+}

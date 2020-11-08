@@ -9,7 +9,7 @@ let Users = ({
   onPageChanged,
   ...props}) => {
   return (
-    <div>
+    <div className={s.userList}>
       <div className={s.paginator}>
       <Paginator 
         currentPage={currentPage}

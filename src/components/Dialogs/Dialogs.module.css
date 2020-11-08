@@ -1,12 +1,14 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
 }
 .dialog {
   height: 50px;
   border-color: rgb(255, 255, 255);
   border: solid;
   margin: 5px auto;
+ 
 }
 
 .dialog img {
@@ -15,21 +17,21 @@
   border-radius: 50%;
 
 }
-
-.messages {
-  padding: 10px;
-  background-color:rgb(162, 202, 255);
-
-}
-.message {
-  
-}
 .dialogsItems {
   padding: 10px;
   color: white;
-  background-color: rgb(239, 246, 255);
+  background-color: var(--bcc);
   text-decoration: none;
+  border-radius: var(--br);
 }
+
+
+.messages {
+  padding: 10px;
+  background-color: var(--bcc);
+  border-radius: var(--br);
+}
+
 
 .dialogsItems .active {
   color: gold;

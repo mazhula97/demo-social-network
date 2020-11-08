@@ -1,13 +1,16 @@
 .userInformation {
+  background-color: var(--bcc);
+  border-radius: var(--br);
   display: grid;
   grid-template-columns: 2fr 10fr;
+  
 
   grid-template-areas: "uimg uinf";
 }
 
 .mainPhoto {
   grid-area: uimg;
-  border: 2px solid rgb(28, 23, 70);
+
   padding: 10px;
 }
 .mainPhoto img {
@@ -21,22 +24,10 @@
 }
 .userInfo {
   grid-area: uinf;
-  border: solid 1px green;
+  border-left: solid 1px rgb(0, 0, 0);
   padding: 10px;
-}
-.profileBackground img {
-  width: 100%;
-  height: 300px;
-  border: solid gold;
-}
-
-.contactUl {
-  text-align: center;
-  list-style-type: none;
-  float: right;
 }
 
 .editButton {
   float: right;
 }
-

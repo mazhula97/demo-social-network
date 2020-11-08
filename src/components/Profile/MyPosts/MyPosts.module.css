@@ -1,5 +1,7 @@
 .postsBlock {
     padding: 10px;
+    background-color: var(--bcc);
+    border-radius: var(--br)
 }
 .posts {
     margin-top: 10px;

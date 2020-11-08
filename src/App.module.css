@@ -15,8 +15,8 @@
 }
 .appWrapperContent {
   grid-area: c;
-  background-color: rgb(245, 249, 255);
-  border: solid 0.5px rgba(51,76,138,.85) ;
+  /* background-color: rgb(245, 249, 255);  */
+  /* border: solid 0.5px rgba(51,76,138,.85) ; */
   box-shadow: black ;
   border-radius: 7px;
   
@@ -30,4 +30,20 @@
     left: 50%;
     margin: -125px 0 0 -125px;
   
+}
+/*Mobile */
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    grid-template-areas:
+    "n"    
+    "h"    
+    "c"          
+    ;
+    grid-template-columns: var(--of) 1fr var(--of);
+    grid-template-rows: 50px 1fr;
+  }
+
+  .left_bar, .left_offset {
+    display: none;
+  }
 }
