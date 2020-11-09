@@ -23,39 +23,16 @@ const ProfileData = ({
         <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </div>
 
-      <div>
+      <div className={s.aboutMe}>
         <b>About me:</b>
         <div> {profile.aboutMe} </div>
       </div>
-      <div>
+      <div className={s.mySkills}>
         <b>My skills:</b>
-        <div>{profile.lookingForAJobDescription}</div>
+        <div className={s.mySkillsText}>{profile.lookingForAJobDescription}</div>
       </div>
-      {/* <div className={s.contacts}>
-        Website:
-        <a href={`${profile.contacts.vk}`}>{profile.contacts.vk || "null"}</a>
-        {Object.keys(profile.contacts).map((key) => {
-          return (
-            profile.contacts[key] && (
-              <Contacts
-                key={key}
-                contactTitle={key}
-                contactValue={profile.contacts[key]}
-              />
-            ) 
-          );
-        })}  
-      </div> */}
     </div>
   );
 };
-
-// const Contacts = ({ contactTitle, contactValue }) => {
-//   return (
-//     <div>
-//     {contactTitle}:{contactValue}
-//     </div>
-//   );
-// };
 
 export default ProfileData;

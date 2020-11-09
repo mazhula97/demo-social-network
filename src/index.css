@@ -28,7 +28,10 @@ body {
   --csh: 250px; /* comingSoon heigth*/
   --csw: 300px; /* comingSoon width*/
 
+--pdtc: rgb(13, 10, 56);
+
   --br: 7px; /*  border radius   */
+
 
   --bcc: rgb(236, 248, 255); /* background-content-color*/
   --of: minmax(0, auto);  /* отступы контента от края экрана */

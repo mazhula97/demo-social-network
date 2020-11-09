@@ -1,0 +1,39 @@
+.userData {
+  display: grid;
+  grid-template-areas:
+    "fn e"
+    "s s"
+    "am am"
+    "ms ms";
+  grid-template-columns: 10fr 1fr;
+  grid-template-rows: 35px 1fr 4fr 3fr;
+}
+.fullName {
+  grid-area: fn;
+  font-size: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: rgb(4, 6, 136);
+}
+.editProfileButton {
+  grid-area: e;
+  width: 10px;
+  height: 10px;
+}
+.statusInput {
+  grid-area: s;
+  color: rgb(26, 7, 122);
+}
+.aboutMe {
+  grid-area: am;
+  color: var(--pdtc);
+}
+.mySkills {
+  grid-area: ms;
+  color: var(--pdtc);
+ 
+}
+.mySkillsText {
+    
+    
+}
