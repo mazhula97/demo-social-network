@@ -5,7 +5,14 @@ import userPhoto from "../../../assets/images/user.png";
 import ProfileDataForm from "./ProfileDataForm";
 import ProfileData from "./ProfileData";
 
-const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, saveProfile}) => {
+const ProfileInfo = ({
+  profile,
+  isOwner,
+  savePhoto,
+  status,
+  updateStatus,
+  saveProfile,
+}) => {
   let [editMode, setEditMode] = useState(false);
 
   if (!profile) {
@@ -19,39 +26,45 @@ const ProfileInfo = ({profile, isOwner, savePhoto, status, updateStatus, savePro
   };
 
   const onSubmit = (formData) => {
-    saveProfile(formData)
-    .then(() => {
+    saveProfile(formData).then(() => {
       setEditMode(false);
-    })
-    
+    });
   };
   return (
     <div className={s.userInformation}>
       <div className={s.mainPhoto} title="User Image">
         <img alt={"Main"} src={profile.photos.large || userPhoto} />
-        {isOwner && <input type={"file"} onChange={onMainPhotoChange} />}
+        {isOwner && (
+          <input
+            className={s.addFileButton}
+            type={"file"}
+            onChange={onMainPhotoChange}
+          />
+        )}
+      </div>
+      <div className={s.userInfo}>
+        {editMode ? (
+          <ProfileDataForm
+            initialValues={profile}
+            profile={profile}
+            status={status}
+            updateStatus={updateStatus}
+            onSubmit={onSubmit}
+          />
+        ) : (
+          <ProfileData
+            goToEditMode={() => setEditMode(true)}
+            profile={profile}
+            status={status}
+            updateStatus={updateStatus}
+            isOwner={isOwner}
+          />
+        )}
       </div>
 
-      {editMode ? (
-        <ProfileDataForm
-          initialValues={profile}
-          profile={profile}
-          status={status}
-          updateStatus={updateStatus}
-          onSubmit={onSubmit}
-        />
-      ) : (
-        <ProfileData
-          goToEditMode={() => setEditMode(true)}
-          profile={profile}
-          status={status}
-          updateStatus={updateStatus}
-          isOwner={isOwner}
-        />
-      )}
+      <div className={s.other}>Other</div>
     </div>
   );
 };
-
 
 export default ProfileInfo;

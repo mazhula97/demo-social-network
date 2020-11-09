@@ -1,6 +1,6 @@
 import preloader from "../../../assets/images/preloader.svg"
 import React from 'react'
-import s from "../../../App.module.css"
+import s from "./Preloader.module.css"
 let Preloader = (props) => {
      return (
 <div className={s.preloader}>

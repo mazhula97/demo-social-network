@@ -6,7 +6,7 @@ import {
   TextArea,
 } from "../../common/FormsControls/FormsControls";
 import s from "./ProfileInfo.module.css";
-import style from '../../common/FormsControls/FormsControls.module.css'
+import style from "../../common/FormsControls/FormsControls.module.css";
 
 const ProfileDataForm = ({ profile, handleSubmit, error }) => {
   return (
@@ -14,11 +14,6 @@ const ProfileDataForm = ({ profile, handleSubmit, error }) => {
       <div className={s.userInfo} title=" User Information">
         <div className={s.fullName}>
           {createField("Full name", "fullName", [], Input)}
-        </div>
-
-        <div>
-          Looking for a job:
-          {createField("", "lookingForAJob", [], Input, { type: "checkbox" })}
         </div>
 
         <div>{createField("About me", "aboutMe", [], TextArea)}</div>
@@ -43,7 +38,7 @@ const ProfileDataForm = ({ profile, handleSubmit, error }) => {
           })}
         </div>
         <div>
-        {error && <div className={style.formSummaryError}>{error}</div>}
+          {error && <div className={style.formSummaryError}>{error}</div>}
           <button>SAVE</button>
         </div>
       </div>

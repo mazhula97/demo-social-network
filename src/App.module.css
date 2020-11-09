@@ -22,7 +22,7 @@
   
 
 }
-.preloader {
+/* .preloader {
     width: 250px;
     height: 250px;
     position: relative ;
@@ -30,9 +30,9 @@
     left: 50%;
     margin: -125px 0 0 -125px;
   
-}
+} */
 /*Mobile */
-@media only screen and (max-width: 750px) {
+/* @media only screen and (max-width: 750px) {
   .wrapper {
     grid-template-areas:
     "n"    
@@ -46,4 +46,4 @@
   .left_bar, .left_offset {
     display: none;
   }
-}
+} */
