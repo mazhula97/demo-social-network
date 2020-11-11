@@ -13,12 +13,16 @@ const ProfileDataForm = ({ profile, handleSubmit, error }) => {
     <form onSubmit={handleSubmit}>
       <div className={s.userInfo} title=" User Information">
         <div className={s.fullName}>
+          Full Name
           {createField("Full name", "fullName", [], Input)}
         </div>
 
-        <div>{createField("About me", "aboutMe", [], TextArea)}</div>
+        <div>
+          About Me
+          {createField("About me", "aboutMe", [], TextArea)}</div>
 
         <div>
+          My skills
           {createField(
             "My profesional skills",
             "lookingForAJobDescription",
@@ -27,7 +31,7 @@ const ProfileDataForm = ({ profile, handleSubmit, error }) => {
           )}
         </div>
 
-        <div className={s.contacts}>
+        {/* <div className={s.contacts}>
           <b>Contacts</b>:{" "}
           {Object.keys(profile.contacts).map((key) => {
             return (
@@ -36,7 +40,7 @@ const ProfileDataForm = ({ profile, handleSubmit, error }) => {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <div>
           {error && <div className={style.formSummaryError}>{error}</div>}
           <button>SAVE</button>

@@ -1,14 +1,16 @@
 .usersItem {
   display: grid;
   grid-template-areas: "uph usn fb oth";
-  grid-template-columns: 150px 1fr 80px 200px;
+  grid-template-columns: 150px 1fr 100px 250px;
   background-color: var(--bcc);
   margin-bottom: 10px;
   border-radius: var(--br);
 }
+/* User Photo*/ 
 .userPhotoItem {
   grid-area: uph;
-  padding: 10px;
+  padding: 15px 10px 10px 15px;
+
 }
 .userPhotoItem img {
   width: 70px;
@@ -16,17 +18,66 @@
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
+/* Name and Status*/
 .userStatusName {
   grid-area: usn;
+ 
 }
+.userName {
+margin-top: 10px;
+margin-bottom: 30px;
+font-weight: bold;
+font-size: 20px;
+font-family: Roboto;
+color: rgb(4, 6, 136);
+}
+.userStatus {
+   color: rgb(136, 136, 158);
+    font-family: Roboto;
+}
+/* Buttons */
 .followButton {
   grid-area: fb;
-  border: 1px solid rgb(255, 10, 10);
+  
+  text-align: center;
 }
+.followButton button {
+  margin-top: 15px;
+  
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 700;
+    color: rgb(226, 226, 228);
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+    padding: .5em 1em;
+    outline: none;
+    border-radius: 3px;
+    background: linear-gradient(rgb(10, 10, 10), rgb(0, 0, 0)) rgb(0, 0, 0);
+    box-shadow:
+     0 1px rgba(255,255,255,.2) inset,
+     0 3px 5px rgba(0,1,6,.5),
+     0 0 1px 1px rgba(0,1,6,.2);
+    transition: .2s ease-in-out;
+}
+.followButton button:hover:not(:active) {
+  background: linear-gradient(rgb(162, 162, 173), rgb(70,71,76)) rgb(126,126,134);
+}
+.followButton button:active {
+  top: 1px;
+  background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+  box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
+}
+/* Oter block*/
 .otherInfo {
   grid-area: oth;
   padding: 10px;
   margin: 10px;
   border-radius: var(--br);
   background-color: rgba(52, 49, 194, 0.5);
+  text-align: center;
 }

@@ -17,8 +17,8 @@ let User = ({ user, followingInProgress, follow, unfollow }) => {
       </div>
 
       <div className={s.userStatusName}>
-        <div>{user.name}</div>
-        <div> {user.status ? user.status : "No status"} </div>
+        <div className={s.userName}>{user.name}</div>
+        <div className={s.userStatus}> {user.status ? user.status : "No status"} </div>
       </div>
       <div className={s.followButton}>
         {user.followed ? (

@@ -32,7 +32,7 @@
 }
 .item :hover {
   letter-spacing: 1px;
-  font-size: 27px;
+  font-size: 25px;
   box-shadow: 0 0 20px rgba(223, 245, 31, 0.3);
   background-color: rgba(229, 255, 0, 0.1);
 }
