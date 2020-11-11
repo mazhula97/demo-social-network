@@ -1,0 +1,2 @@
+(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[6],{308:function(n,e,a){n.exports={friends:"Friends_friends__85qny",comingSoon:"Friends_comingSoon__14ijl"}},313:function(n,e,a){"use strict";a.r(e);var i=a(0),s=a.n(i),t=a(308),c=a.n(t),o=a(38),r=a.n(o);e.default=function(n){return s.a.createElement("div",{className:c.a.friends},s.a.createElement("div",{className:c.a.comingSoon},s.a.createElement("img",{src:r.a,alt:""})))}}}]);
+//# sourceMappingURL=6.293072dd.chunk.js.map
