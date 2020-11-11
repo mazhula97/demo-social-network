@@ -1,23 +1,58 @@
-.item {
+.postItem {
+  display: grid;
+  grid-template-areas: " pi pm lb";
+  grid-template-columns: 1fr 10fr 40px;
   color: dimgray;
   background-color: white;
   padding: 10px;
   margin: 10px;
-  border-radius: 5px;
-  border: solid black;
-
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-.item img {
+/* Post Image*/
+.postItem img {
+  grid-area: pi;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 50px;
   height: 50px;
-  border-radius: 40%;
+  border-radius: 50%;
   margin-right: 20px;
 }
+/* Post Message*/
+.postMessage {
+  grid-area: pm;
+ 
+}
+/* Like button*/
+
 .buttonLike {
-  border-radius: 30%;
   width: 40px;
   height: 30px;
-  text-align: center;
- float: right;
+  grid-template-areas: lb;
+  margin-top: 7px;
+  margin-right: 7px;
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgb(226, 226, 228);
+  text-decoration: none;
+  text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.3em;
+  outline: none;
+  border-radius: 3px;
+  background: linear-gradient(rgb(10, 10, 10), rgb(0, 0, 0)) rgb(0, 0, 0);
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(0, 1, 6, 0.5),
+    0 0 1px 1px rgba(0, 1, 6, 0.2);
+  transition: 0.2s ease-in-out;
+}
+.buttonLike:hover:not(:active) {
+  background: linear-gradient(rgb(162, 162, 173), rgb(70, 71, 76))
+    rgb(126, 126, 134);
+}
+.buttonLike:active {
+  top: 1px;
+  background: linear-gradient(rgb(76, 77, 82), rgb(56, 57, 62)) rgb(76, 77, 82);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset,
+    0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
 }
