@@ -1,0 +1,12 @@
+.friends{
+    background-color: var(--bcc);
+    height: 600px;
+    border-radius: var(--br);
+    
+}
+.comingSoon img{ 
+    height: var(--csh);
+    width: var(--csw);
+    display: block;
+    margin: auto  ;
+}

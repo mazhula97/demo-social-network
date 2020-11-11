@@ -33,7 +33,7 @@ class App extends Component {
         <Navbar />
 
         <div className={s.appWrapperContent}>
-         <Suspense fallback={"huuuu"} >
+         <Suspense fallback={<Preloader />} >
            <Switch>
            <Route exact
             path="/"

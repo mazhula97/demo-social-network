@@ -1,0 +1,32 @@
+.usersItem {
+  display: grid;
+  grid-template-areas: "uph usn fb oth";
+  grid-template-columns: 150px 1fr 80px 200px;
+  background-color: var(--bcc);
+  margin-bottom: 10px;
+  border-radius: var(--br);
+}
+.userPhotoItem {
+  grid-area: uph;
+  padding: 10px;
+}
+.userPhotoItem img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+.userStatusName {
+  grid-area: usn;
+}
+.followButton {
+  grid-area: fb;
+  border: 1px solid rgb(255, 10, 10);
+}
+.otherInfo {
+  grid-area: oth;
+  padding: 10px;
+  margin: 10px;
+  border-radius: var(--br);
+  background-color: rgba(52, 49, 194, 0.5);
+}
